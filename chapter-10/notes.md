@@ -18,6 +18,9 @@
 | one-hot encoded vectors |    [0, 0, 1, 0, 0]  | categorical_crossentropy |
 | binary classification | [1, 1, 0] | binary_crossentropy |
 
+- To convert sparse into one-hot: [`tf.keras.utils.to_categorical()`](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical)
+- To convert one-hot to sparse: `np.argmax(axis=-1)`
+
 # Regression
 
 | Hyperparameter   |      Typical value      |
