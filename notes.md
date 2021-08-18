@@ -35,6 +35,34 @@
 
 - Sequential API
 - Functional API
-   - Good for using multiple input/outputs or connecting layers in a non-sequential manner
+   - Good for using multiple input/outputs or *skip connections*
 - Subclassing API
    - Good for doing if/loops inside `call()` method
+
+# Optimizing result
+
+- Input Normalization
+- BN (almost compulsory)
+
+Initialization:
+
+| Initializaiton   |      Activation Function      |
+|----------|:-------------:|
+| Glorot |  None, tanh, logistic, softmax |
+| He |  ReLU and variants |
+| LeCun | SeLU |
+
+Choosing hyper-parameters tips:
+- In general, make deeper and not bigger
+- Learning rate: Use the swipe of learning rates
+- Try changing ReLU to LeakyReLU or ELU
+
+Overfitting:
+- EarlyStopping
+- Dropout
+- BN
+
+Exploding Gradient:
+- Glorot/He init
+- BN
+
