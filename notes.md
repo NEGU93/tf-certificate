@@ -1,4 +1,6 @@
-# Classification
+# Task objective
+
+## Classification
 
 **Binary classification:**
    - Can have several values to one.
@@ -10,7 +12,7 @@
    - Output layer: Softmax
 
 
-## Loss functions
+### Loss functions
 
 | Labels   |      Example      | function |
 |----------|:-------------:|------:|
@@ -21,10 +23,18 @@
 - To convert sparse into one-hot: [`tf.keras.utils.to_categorical()`](https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical)
 - To convert one-hot to sparse: `np.argmax(axis=-1)`
 
-# Regression
+## Regression
 
 | Hyperparameter   |      Typical value      |
 |----------|:-------------:|
 | Hidden act |  ReLU (or SeLU) |
 | Output act |  None, ReLU/Softplus (if positive outputs), tanh/logistic (if bounded outputs) |
 | Loss function |  MSE or MAE (if outliers) |
+
+# APIs
+
+- Sequential API
+- Functional API
+   - Good for using multiple input/outputs or connecting layers in a non-sequential manner
+- Subclassing API
+   - Good for doing if/loops inside `call()` method
