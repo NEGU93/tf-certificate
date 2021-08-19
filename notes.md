@@ -65,4 +65,6 @@ Overfitting:
 Exploding Gradient:
 - Glorot/He init
 - BN
+- Gredient Clipping (add max to the gradient values)
+  - Used buy adding `clipnorm` or `clipvalue` parameter to the optimizer
 
