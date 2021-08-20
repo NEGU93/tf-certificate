@@ -8,7 +8,7 @@ x_train = x_train / 255.0
 x_test = x_test / 255.0
 
 
-def _get_model():
+def get_model():
     model = tf.keras.Sequential()
     model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
     model.add(tf.keras.layers.Dense(300, activation="relu"))
@@ -20,8 +20,12 @@ def _get_model():
     return model
 
 
+def get_dataset():
+    return (x_train, y_train), (x_test, y_test)
+
+
 def get_model_and_history_example():
-    model = _get_model()
+    model = get_model()
     history = model.fit(x=x_train, y=y_train, epochs=30, validation_data=(x_test, y_test), verbose=0)
     return model, history
 
